@@ -40,7 +40,10 @@
                                     <constraint firstAttribute="height" constant="40" id="jke-yz-tZO"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="14F-nk-SW1">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="g56-6g-gXZ">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bZM-DK-AGR">
                                 <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -48,15 +51,25 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="14F-nk-SW1" secondAttribute="trailing" id="D4p-JP-ePt"/>
-                            <constraint firstItem="14F-nk-SW1" firstAttribute="top" secondItem="wF9-Gr-qFp" secondAttribute="bottom" constant="10" id="Fth-84-WwI"/>
+                            <constraint firstItem="g56-6g-gXZ" firstAttribute="top" secondItem="wF9-Gr-qFp" secondAttribute="bottom" constant="10" id="1Yg-81-TAT"/>
+                            <constraint firstItem="bZM-DK-AGR" firstAttribute="top" secondItem="wF9-Gr-qFp" secondAttribute="bottom" constant="10" id="5eq-xM-e4s"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bZM-DK-AGR" secondAttribute="bottom" id="FoJ-jF-pyZ"/>
+                            <constraint firstItem="g56-6g-gXZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OM5-Eh-3iU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="g56-6g-gXZ" secondAttribute="bottom" id="Pvg-xD-pAC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wF9-Gr-qFp" secondAttribute="trailing" constant="10" id="UH9-CY-JKf"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="14F-nk-SW1" secondAttribute="bottom" id="p4E-Fc-t7r"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bZM-DK-AGR" secondAttribute="trailing" id="ba6-lc-F3c"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="g56-6g-gXZ" secondAttribute="trailing" id="jcW-pe-9t6"/>
                             <constraint firstItem="wF9-Gr-qFp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="r0I-Hd-HzD"/>
-                            <constraint firstItem="14F-nk-SW1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ryK-rd-uNP"/>
                             <constraint firstItem="wF9-Gr-qFp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="u7G-NK-qZK"/>
+                            <constraint firstItem="bZM-DK-AGR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ylg-aE-Xxt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indicator" destination="g56-6g-gXZ" id="dDd-Cp-poz"/>
+                        <outlet property="searchButton" destination="yxh-Xy-ouF" id="GvO-60-ESQ"/>
+                        <outlet property="tableView" destination="bZM-DK-AGR" id="nmf-kw-eqe"/>
+                        <outlet property="textField" destination="4QO-gL-amU" id="A3W-Yp-Y13"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

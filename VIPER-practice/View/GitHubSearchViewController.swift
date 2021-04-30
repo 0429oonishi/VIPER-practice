@@ -7,23 +7,104 @@
 
 import UIKit
 
-class GitHubSearchViewController: UIViewController {
+protocol GitHubSearchView: AnyObject {
+    func initView()
+    func startLoading()
+    func finishLoading()
+    func reloadTableView(items: [GitHubSearchEntity])
+}
 
+final class GitHubSearchViewController: UIViewController {
+
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var indicator: UIActivityIndicatorView!
+    @IBOutlet private weak var tableView: UITableView!
+    
+    private var presenter: GitHubSearchPresentation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(GitHubSearchTableViewCell.nib,
+                           forCellReuseIdentifier: GitHubSearchTableViewCell.identifier)
+        searchButton.addTarget(self, action: #selector(searchButtonDidTapped), for: .touchUpInside)
+        presenter.viewDidLoad()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func inject(presenter: GitHubSearchPresentation) {
+        self.presenter = presenter
     }
-    */
 
+}
+
+// MARK: - @objc func
+@objc private extension GitHubSearchViewController {
+    
+    func searchButtonDidTapped() {
+        presenter.searchButtonDidTapped(word: textField.text)
+    }
+    
+}
+
+// MARK: - GitHubSearchView
+extension GitHubSearchViewController: GitHubSearchView {
+    
+    func initView() {
+        DispatchQueue.main.async {
+            self.tableView.isHidden = true
+            self.indicator.isHidden = true
+        }
+    }
+    
+    func startLoading() {
+        DispatchQueue.main.async {
+            self.tableView.isHidden = true
+            self.indicator.isHidden = false
+        }
+    }
+    
+    func finishLoading() {
+        DispatchQueue.main.async {
+            self.tableView.isHidden = false
+            self.indicator.isHidden = true
+        }
+    }
+    
+    func reloadTableView(items: [GitHubSearchEntity]) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+}
+
+// MARK: - UITableViewDelegate
+extension GitHubSearchViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter.selectItem(indexPath: indexPath)
+    }
+    
+}
+
+// MARK: - UITableViewDataSource
+extension GitHubSearchViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.getSearchedItems().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: GitHubSearchTableViewCell.identifier,
+                                                 for: indexPath) as! GitHubSearchTableViewCell
+        let item = presenter.getSearchedItems()[indexPath.row]
+        cell.configure(gitHubSearch: item)
+        return cell
+    }
+    
 }
