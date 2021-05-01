@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABB6EC3B263C619700E60D17 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB6EC3A263C619700E60D17 /* Top.storyboard */; };
+		ABD1D502263C63DC0075D7D0 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD1D501263C63DC0075D7D0 /* TopViewController.swift */; };
 		ABD662AA263BDF0400027589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662A9263BDF0400027589 /* AppDelegate.swift */; };
 		ABD662AC263BDF0400027589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662AB263BDF0400027589 /* SceneDelegate.swift */; };
 		ABD662AE263BDF0400027589 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662AD263BDF0400027589 /* ViewController.swift */; };
@@ -26,9 +28,16 @@
 		ABD662DD263C032A00027589 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662DC263C032A00027589 /* String+Extension.swift */; };
 		ABD662DF263C033300027589 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662DE263C033300027589 /* UIStoryboard.swift */; };
 		ABD662E1263C03D600027589 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662E0263C03D600027589 /* UIViewController+Extension.swift */; };
+		ABD662E9263C535800027589 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD662E8263C535800027589 /* Web.storyboard */; };
+		ABD662EB263C538600027589 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662EA263C538600027589 /* WebViewController.swift */; };
+		ABD662ED263C554E00027589 /* WebInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662EC263C554E00027589 /* WebInteractor.swift */; };
+		ABD662EF263C562600027589 /* WebRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662EE263C562600027589 /* WebRouter.swift */; };
+		ABD662F1263C567D00027589 /* WebPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662F0263C567D00027589 /* WebPresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ABB6EC3A263C619700E60D17 /* Top.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
+		ABD1D501263C63DC0075D7D0 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		ABD662A6263BDF0400027589 /* VIPER-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIPER-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD662A9263BDF0400027589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD662AB263BDF0400027589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +59,11 @@
 		ABD662DC263C032A00027589 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		ABD662DE263C033300027589 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		ABD662E0263C03D600027589 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		ABD662E8263C535800027589 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
+		ABD662EA263C538600027589 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		ABD662EC263C554E00027589 /* WebInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebInteractor.swift; sourceTree = "<group>"; };
+		ABD662EE263C562600027589 /* WebRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRouter.swift; sourceTree = "<group>"; };
+		ABD662F0263C567D00027589 /* WebPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +96,12 @@
 		ABD662A8263BDF0400027589 /* VIPER-practice */ = {
 			isa = PBXGroup;
 			children = (
+				ABB6EC3A263C619700E60D17 /* Top.storyboard */,
+				ABD1D501263C63DC0075D7D0 /* TopViewController.swift */,
+				ABD662E2263C528C00027589 /* GitHubSearchModules */,
+				ABD662E3263C52DB00027589 /* WebModules */,
 				ABD662D5263BEBCC00027589 /* Utility */,
 				ABD662C8263BE6A600027589 /* Extensions */,
-				ABD662C1263BE0A000027589 /* View */,
-				ABD662BE263BE08100027589 /* Interactor */,
-				ABD662BF263BE09000027589 /* Presenter */,
-				ABD662BD263BE07500027589 /* Entity */,
-				ABD662C0263BE09A00027589 /* Router */,
 				ABD662A9263BDF0400027589 /* AppDelegate.swift */,
 				ABD662AB263BDF0400027589 /* SceneDelegate.swift */,
 				ABD662AD263BDF0400027589 /* ViewController.swift */,
@@ -162,6 +175,62 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		ABD662E2263C528C00027589 /* GitHubSearchModules */ = {
+			isa = PBXGroup;
+			children = (
+				ABD662C1263BE0A000027589 /* View */,
+				ABD662BE263BE08100027589 /* Interactor */,
+				ABD662BF263BE09000027589 /* Presenter */,
+				ABD662BD263BE07500027589 /* Entity */,
+				ABD662C0263BE09A00027589 /* Router */,
+			);
+			path = GitHubSearchModules;
+			sourceTree = "<group>";
+		};
+		ABD662E3263C52DB00027589 /* WebModules */ = {
+			isa = PBXGroup;
+			children = (
+				ABD662E7263C531A00027589 /* View */,
+				ABD662E4263C530200027589 /* Interactor */,
+				ABD662E5263C530800027589 /* Presenter */,
+				ABD662E6263C530E00027589 /* Router */,
+			);
+			path = WebModules;
+			sourceTree = "<group>";
+		};
+		ABD662E4263C530200027589 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				ABD662EC263C554E00027589 /* WebInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		ABD662E5263C530800027589 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				ABD662F0263C567D00027589 /* WebPresentation.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		ABD662E6263C530E00027589 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				ABD662EE263C562600027589 /* WebRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		ABD662E7263C531A00027589 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABD662E8263C535800027589 /* Web.storyboard */,
+				ABD662EA263C538600027589 /* WebViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,7 +288,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD662E9263C535800027589 /* Web.storyboard in Resources */,
 				ABD662B6263BDF0700027589 /* LaunchScreen.storyboard in Resources */,
+				ABB6EC3B263C619700E60D17 /* Top.storyboard in Resources */,
 				ABD662B3263BDF0700027589 /* Assets.xcassets in Resources */,
 				ABD662CE263BE71500027589 /* GitHubSearchTableViewCell.xib in Resources */,
 				ABD662C3263BE12000027589 /* GitHubSearch.storyboard in Resources */,
@@ -237,6 +308,7 @@
 				ABD662D4263BE99600027589 /* GitHubSearchEntity.swift in Sources */,
 				ABD662AE263BDF0400027589 /* ViewController.swift in Sources */,
 				ABD662E1263C03D600027589 /* UIViewController+Extension.swift in Sources */,
+				ABD1D502263C63DC0075D7D0 /* TopViewController.swift in Sources */,
 				ABD662D7263BEC0100027589 /* GitHubAPI.swift in Sources */,
 				ABD662CA263BE6B700027589 /* UITableViewCell+Extension.swift in Sources */,
 				ABD662AA263BDF0400027589 /* AppDelegate.swift in Sources */,
@@ -246,8 +318,12 @@
 				ABD662D9263BF1B300027589 /* GitHubSearchInteractor.swift in Sources */,
 				ABD662C5263BE15F00027589 /* GitHubSearchViewController.swift in Sources */,
 				ABD662DB263C013E00027589 /* GitHubSearchRouter.swift in Sources */,
+				ABD662EF263C562600027589 /* WebRouter.swift in Sources */,
 				ABD662D2263BE92200027589 /* GitHubSearchPresentation.swift in Sources */,
 				ABD662AC263BDF0400027589 /* SceneDelegate.swift in Sources */,
+				ABD662EB263C538600027589 /* WebViewController.swift in Sources */,
+				ABD662ED263C554E00027589 /* WebInteractor.swift in Sources */,
+				ABD662F1263C567D00027589 /* WebPresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

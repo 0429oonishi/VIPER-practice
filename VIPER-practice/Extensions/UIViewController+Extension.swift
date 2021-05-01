@@ -17,6 +17,7 @@ extension UIViewController {
                 nav.pushViewController(next, animated: animated)
                 completion?()
             } else {
+                next.modalPresentationStyle = .fullScreen
                 self.present(next, animated: animated, completion: completion)
             }
         }

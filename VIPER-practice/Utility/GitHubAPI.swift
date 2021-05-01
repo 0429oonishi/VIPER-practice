@@ -64,7 +64,7 @@ final class GitHubAPI: GitHubAPIProtocol {
             handler?(.failure(.invalidUrl))
             return
         }
-        let task: URLSessionTask = URLSession.shared.dataTask(with: url) { data, _, _ in
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data,
                   let gitHubResponse = try? JSONDecoder().decode(GitHubResponse.self, from: data),
                   let items = gitHubResponse.items else {

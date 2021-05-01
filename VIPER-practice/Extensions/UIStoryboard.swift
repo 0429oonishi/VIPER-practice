@@ -13,4 +13,8 @@ extension UIStoryboard {
         UIStoryboard(name: .gitHubSearch, bundle: nil)
     }
     
+    static var web: UIStoryboard {
+        UIStoryboard(name: .web, bundle: nil)
+    }
+    
 }

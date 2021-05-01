@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GitHubSearchWireframe {
-    func showRepository(parameters: GitHubSearchEntity)
+    func showWeb(initParameters: WebUsecaseInitParameters)
     func showAlert(error: Error)
 }
 
@@ -36,8 +36,8 @@ final class GitHubSearchRouter {
 // MARK: - GitHubSearchWireframe
 extension GitHubSearchRouter: GitHubSearchWireframe {
     
-    func showRepository(parameters: GitHubSearchEntity) {
-        let next = GitHubSearchRouter.assembleModules()
+    func showWeb(initParameters: WebUsecaseInitParameters) {
+        let next = WebRouter.assembleModules(initParameters: initParameters)
         viewController.show(next: next)
     }
     
@@ -46,4 +46,3 @@ extension GitHubSearchRouter: GitHubSearchWireframe {
     }
     
 }
-

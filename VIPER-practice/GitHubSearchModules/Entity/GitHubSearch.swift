@@ -13,28 +13,29 @@ struct GitHubResponse: Codable {
 
 struct GitHubSearch: Codable {
     
-    let id: String
+    let id: Int
     let name: String
     private let fullName: String
     var urlString: String { "https://github.com/\(fullName)" }
+    
     enum CodingKeys: String, CodingKey {
-      case id
-      case name
-      case fullName = "full_name"
+        case id
+        case name
+        case fullName = "full_name"
     }
     
 }
 
 extension GitHubSearch {
-    
+
     private static var jsonString: String {
         """
         {
         "id": 100,
         "name": "REON",
-        "full_name": "OONISHI REON"
+        "full_name": "0429oonishi"
         }
         """
     }
-    
+
 }

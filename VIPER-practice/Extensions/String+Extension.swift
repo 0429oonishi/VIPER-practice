@@ -10,5 +10,6 @@ import Foundation
 extension String {
     
     static let gitHubSearch = "GitHubSearch"
+    static let web = "Web"
     
 }

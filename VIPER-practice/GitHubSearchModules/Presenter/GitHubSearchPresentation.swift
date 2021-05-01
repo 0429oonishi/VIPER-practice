@@ -18,11 +18,11 @@ final class GitHubSearchPresenter {
     
     private weak var view: GitHubSearchView?
     private var interactor: GitHubSearchUsecase
-    private var router: GitHubSearchRouter
+    private var router: GitHubSearchWireframe
     
     init(view: GitHubSearchView,
          interactor: GitHubSearchUsecase,
-         router: GitHubSearchRouter) {
+         router: GitHubSearchWireframe) {
         self.view = view
         self.interactor = interactor
         self.router = router
@@ -54,7 +54,8 @@ extension GitHubSearchPresenter: GitHubSearchPresentation {
     
     func selectItem(indexPath: IndexPath) {
         let gitHubSearchEntity = interactor.getSearchedItems()[indexPath.row]
-        print(gitHubSearchEntity.name)
+        let initParameters: WebUsecaseInitParameters = .init(entity: gitHubSearchEntity)
+        router.showWeb(initParameters: initParameters)
     }
     
     func getSearchedItems() -> [GitHubSearchEntity] {
