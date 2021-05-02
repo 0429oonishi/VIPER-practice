@@ -18,6 +18,7 @@ protocol GitHubSearchPresentation: AnyObject {
 // 他との中継役にだけに徹する
 final class GitHubSearchPresenter {
     
+    // view, interactor, routerへのアクセスはprotocolを介して行う
     // 循環参照しないようにviewだけweak
     private weak var view: GitHubSearchView?
     private var interactor: GitHubSearchUsecase

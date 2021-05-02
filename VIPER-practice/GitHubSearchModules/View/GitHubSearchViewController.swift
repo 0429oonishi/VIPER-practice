@@ -21,6 +21,7 @@ final class GitHubSearchViewController: UIViewController {
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
     
+    // presenterへのアクセスはprotocolを介して行う
     private var presenter: GitHubSearchPresentation!
     
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ final class GitHubSearchViewController: UIViewController {
         tableView.register(GitHubSearchTableViewCell.nib,
                            forCellReuseIdentifier: GitHubSearchTableViewCell.identifier)
         searchButton.addTarget(self, action: #selector(searchButtonDidTapped), for: .touchUpInside)
+        // presenterにイベントを通知
         presenter.viewDidLoad()
         
     }
@@ -45,6 +47,7 @@ final class GitHubSearchViewController: UIViewController {
 @objc private extension GitHubSearchViewController {
     
     func searchButtonDidTapped() {
+        // presenterにイベントを通知
         presenter.searchButtonDidTapped(word: textField.text)
     }
     
@@ -87,6 +90,7 @@ extension GitHubSearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        // presenterにイベントを通知
         presenter.selectItem(indexPath: indexPath)
     }
     
@@ -96,12 +100,14 @@ extension GitHubSearchViewController: UITableViewDelegate {
 extension GitHubSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // presenterにイベントを通知
         return presenter.getSearchedItems().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GitHubSearchTableViewCell.identifier,
                                                  for: indexPath) as! GitHubSearchTableViewCell
+        // presenterにイベントを通知
         let item = presenter.getSearchedItems()[indexPath.row]
         cell.configure(gitHubSearch: item)
         return cell

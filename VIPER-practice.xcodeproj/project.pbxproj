@@ -11,7 +11,6 @@
 		ABD1D502263C63DC0075D7D0 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD1D501263C63DC0075D7D0 /* TopViewController.swift */; };
 		ABD662AA263BDF0400027589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662A9263BDF0400027589 /* AppDelegate.swift */; };
 		ABD662AC263BDF0400027589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662AB263BDF0400027589 /* SceneDelegate.swift */; };
-		ABD662AE263BDF0400027589 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD662AD263BDF0400027589 /* ViewController.swift */; };
 		ABD662B3263BDF0700027589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD662B2263BDF0700027589 /* Assets.xcassets */; };
 		ABD662B6263BDF0700027589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD662B4263BDF0700027589 /* LaunchScreen.storyboard */; };
 		ABD662C3263BE12000027589 /* GitHubSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD662C2263BE12000027589 /* GitHubSearch.storyboard */; };
@@ -41,7 +40,6 @@
 		ABD662A6263BDF0400027589 /* VIPER-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIPER-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD662A9263BDF0400027589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD662AB263BDF0400027589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ABD662AD263BDF0400027589 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ABD662B2263BDF0700027589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABD662B5263BDF0700027589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABD662B7263BDF0700027589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				ABD662C8263BE6A600027589 /* Extensions */,
 				ABD662A9263BDF0400027589 /* AppDelegate.swift */,
 				ABD662AB263BDF0400027589 /* SceneDelegate.swift */,
-				ABD662AD263BDF0400027589 /* ViewController.swift */,
 				ABD662B2263BDF0700027589 /* Assets.xcassets */,
 				ABD662B4263BDF0700027589 /* LaunchScreen.storyboard */,
 				ABD662B7263BDF0700027589 /* Info.plist */,
@@ -306,7 +303,6 @@
 			files = (
 				ABD662CD263BE71500027589 /* GitHubSearchTableViewCell.swift in Sources */,
 				ABD662D4263BE99600027589 /* GitHubSearchEntity.swift in Sources */,
-				ABD662AE263BDF0400027589 /* ViewController.swift in Sources */,
 				ABD662E1263C03D600027589 /* UIViewController+Extension.swift in Sources */,
 				ABD1D502263C63DC0075D7D0 /* TopViewController.swift in Sources */,
 				ABD662D7263BEC0100027589 /* GitHubAPI.swift in Sources */,
