@@ -14,8 +14,11 @@ protocol GitHubSearchPresentation: AnyObject {
     func getSearchedItems() -> [GitHubSearchEntity]
 }
 
+// 他との部品以外はパラメータを持たない
+// 他との中継役にだけに徹する
 final class GitHubSearchPresenter {
     
+    // 循環参照しないようにviewだけweak
     private weak var view: GitHubSearchView?
     private var interactor: GitHubSearchUsecase
     private var router: GitHubSearchWireframe

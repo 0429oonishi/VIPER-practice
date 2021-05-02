@@ -20,13 +20,17 @@ final class GitHubSearchRouter {
         self.viewController = viewController
     }
     
+    // Routerが画面遷移を担当しているので、ここに書く
     static func assembleModules() -> UIViewController {
         let view = UIStoryboard.gitHubSearch.instantiateInitialViewController() as! GitHubSearchViewController
         let interactor = GitHubSearchInteractor()
         let router = GitHubSearchRouter(viewController: view)
+        // presenterが中継役なので、全てと繋げる
         let presenter = GitHubSearchPresenter(view: view,
                                               interactor: interactor,
                                               router: router)
+        // viewからpresenterに通知する必要があるため繋ぐ
+        // viewとpresenterは互いが互いを知っている
         view.inject(presenter: presenter)
         return view
     }

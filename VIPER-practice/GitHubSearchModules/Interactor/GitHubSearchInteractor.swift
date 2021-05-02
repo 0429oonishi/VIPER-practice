@@ -13,6 +13,7 @@ protocol GitHubSearchUsecase {
     func getSearchedItems() -> [GitHubSearchEntity]
 }
 
+// 他のアーキテクチャーでいうUtilityの役割も持つ
 final class GitHubSearchInteractor {
     
     private var searchedItems: [GitHubSearchEntity]
