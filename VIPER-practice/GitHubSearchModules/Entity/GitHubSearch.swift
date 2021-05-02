@@ -25,17 +25,3 @@ struct GitHubSearch: Codable {
     }
     
 }
-
-extension GitHubSearch {
-
-    private static var jsonString: String {
-        """
-        {
-        "id": 100,
-        "name": "REON",
-        "full_name": "0429oonishi"
-        }
-        """
-    }
-
-}
